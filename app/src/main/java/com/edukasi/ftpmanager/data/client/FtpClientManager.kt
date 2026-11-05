@@ -30,7 +30,7 @@ class FtpClientManager {
             val client = FTPClient().apply {
                 defaultTimeout = 15000
                 connectTimeout = 15000
-                dataTimeout = 30000
+                setDataTimeout(30000)
                 controlEncoding = profile.encoding
             }
 
