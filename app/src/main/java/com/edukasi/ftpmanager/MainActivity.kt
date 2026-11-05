@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,12 +16,15 @@ import com.edukasi.ftpmanager.ui.theme.FtpManagerTheme
 
 class MainActivity : ComponentActivity() {
 
-    private val serverViewModel: ServerViewModel by viewModels()
-    private val clientViewModel: ClientViewModel by viewModels()
+    private lateinit var serverViewModel: ServerViewModel
+    private lateinit var clientViewModel: ClientViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        serverViewModel = ViewModelProvider(this)[ServerViewModel::class.java]
+        clientViewModel = ViewModelProvider(this)[ClientViewModel::class.java]
 
         setContent {
             FtpManagerTheme {

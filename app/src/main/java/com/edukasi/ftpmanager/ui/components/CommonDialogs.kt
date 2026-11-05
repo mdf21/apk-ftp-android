@@ -167,7 +167,7 @@ fun TransferProgressDialog(
                 Spacer(modifier = Modifier.height(12.dp))
                 if (totalBytes > 0) {
                     LinearProgressIndicator(
-                        progress = { percent / 100f },
+                        progress = percent / 100f,
                         modifier = Modifier.fillMaxWidth(),
                     )
                     Spacer(modifier = Modifier.height(8.dp))

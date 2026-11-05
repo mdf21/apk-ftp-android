@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.CreateNewFolder
@@ -145,7 +145,7 @@ fun FileExplorerScreen(
                     navigationIcon = {
                         if (currentPath != "/") {
                             IconButton(onClick = { viewModel.navigateToParent() }) {
-                                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Folder Induk")
+                                Icon(Icons.Default.ArrowBack, contentDescription = "Folder Induk")
                             }
                         } else {
                             IconButton(onClick = { /* Root */ }) {

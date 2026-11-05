@@ -14,7 +14,7 @@ import androidx.compose.material.icons.filled.AudioFile
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Download
-import androidx.compose.material.icons.filled.DriveFileRenameOutline
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.FolderZip
 import androidx.compose.material.icons.filled.Image
@@ -123,7 +123,7 @@ fun FileItemRow(
 
                 DropdownMenuItem(
                     text = { Text("Ganti Nama") },
-                    leadingIcon = { Icon(Icons.Default.DriveFileRenameOutline, null) },
+                    leadingIcon = { Icon(Icons.Default.Edit, null) },
                     onClick = {
                         menuExpanded = false
                         onRename()
