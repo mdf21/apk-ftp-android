@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FTP Manager</string>
+    <string name="tab_server">FTP Server</string>
+    <string name="tab_client">FTP Client</string>
+    <string name="server_running">Server FTP Aktif</string>
+    <string name="server_stopped">Server FTP Berhenti</string>
+    <string name="btn_start_server">Mulai Server</string>
+    <string name="btn_stop_server">Hentikan Server</string>
+    <string name="notif_channel_name">FTP Server Service</string>
+    <string name="notif_channel_desc">Menjaga Server FTP tetap berjalan di latar belakang</string>
+</resources>
+
