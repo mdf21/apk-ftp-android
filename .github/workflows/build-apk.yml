@@ -26,7 +26,16 @@ jobs:
         gradle-version: '8.9'
 
     - name: Build Debug APK
-      run: gradle assembleDebug --stacktrace --info
+      run: |
+        gradle assembleDebug --stacktrace > build_log.txt 2>&1 || BUILD_STATUS=$?
+        cat build_log.txt
+        if [ "${BUILD_STATUS:-0}" -ne 0 ]; then
+          echo "### ❌ Build Failed - Error Summary" >> $GITHUB_STEP_SUMMARY
+          echo '```text' >> $GITHUB_STEP_SUMMARY
+          grep -E "e: |error:|Compilation error|FAILED|FAILURE:" build_log.txt | head -n 50 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          exit $BUILD_STATUS
+        fi
 
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4
